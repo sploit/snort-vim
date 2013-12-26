@@ -123,7 +123,7 @@ syn match       SnortOpRange    ":" contained
 "syn keyword     SnortRuleOptions   skipwhite contained nextgroup=SnortRuleOptionBody logto session resp react tag activates activated_by count replace detection_filter
 "syn keyword     SnortRuleOptions   skipwhite contained nextgroup=SnortRuleOptionBody threshold
 
-syn keyword     SnortRuleAction     activate alert drop block dynamic log pass reject sdrop sblock skipwhite nextgroup=SnortRuleProto
+syn keyword     SnortRuleAction     activate alert drop block dynamic log pass reject sdrop sblock skipwhite nextgroup=SnortRuleProto,SnortRuleBlock
 syn keyword     SnortRuleProto      ip tcp udp icmp skipwhite contained nextgroup=SnortRuleSrcIP
 syn match       SnortRuleSrcIP      "\S\+" transparent skipwhite contained contains=SnortIPVarList,SnortIPAddr,SnortVar,SnortOpNot nextgroup=SnortRuleSrcPort
 syn match       SnortRuleSrcPort    "\S\+" transparent skipwhite contained contains=SnortPortVarList,SnortVar,SnortPort,SnortOpRange,SnortOpNot nextgroup=SnortRuleDir
@@ -142,7 +142,7 @@ syn keyword     SnortRuleOption   skipwhite contained nextgroup=SnortRuleSROP si
 syn keyword     SnortRuleOption   skipwhite contained nextgroup=SnortRuleSROP ssl_state fragoffset ttl tos id ipopts fragbits dsize flags flow flowbits seq ack window
 syn keyword     SnortRuleOption   skipwhite contained nextgroup=SnortRuleSROP itype icode icmp_id icmp_seq rpc ip_proto sameip stream_reassemble stream_size
 syn keyword     SnortRuleOption   skipwhite contained nextgroup=SnortRuleSROP logto session resp react tag activates activated_by count replace detection_filter
-syn keyword     SnortRuleOption   skipwhite contained nextgroup=SnortRuleSROP threshold reference sd_pattern
+syn keyword     SnortRuleOption   skipwhite contained nextgroup=SnortRuleSROP threshold reference sd_pattern file_type file_group
 
 syn region      SnortRuleSROP     start=':' end=";" transparent keepend contained contains=SnortRuleChars,SnortString,SnortNumber
 syn match       SnortRuleChars    "\%(\k\|\.\|?\|=\|/\|%\|&\)\+" contained
